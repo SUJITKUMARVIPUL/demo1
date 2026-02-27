@@ -1,9 +1,7 @@
-FROM openjdk:21
+FROM amazoncorretto:21
 
-COPY target/demo-app.jar  /usr/app/
+COPY target/demo-app.jar /usr/app/
 
-WORKDIR /usr/app/
+WORKDIR /usr/app
 
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "demo-app.jar"]
+CMD ["java", "-jar", "demo-app.jar"]
